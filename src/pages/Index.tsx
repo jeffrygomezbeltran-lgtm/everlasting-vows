@@ -1,12 +1,42 @@
-// Update this page (the content is just a fallback if you fail to update the page)
+import { useState } from "react";
+import { AnimatePresence } from "framer-motion";
+import WelcomeScreen from "@/components/wedding/WelcomeScreen";
+import HeroSection from "@/components/wedding/HeroSection";
+import CountdownSection from "@/components/wedding/CountdownSection";
+import CeremonySection from "@/components/wedding/CeremonySection";
+import CelebrationSection from "@/components/wedding/CelebrationSection";
+import GallerySection from "@/components/wedding/GallerySection";
+import PartySection from "@/components/wedding/PartySection";
+import MusicPlayer from "@/components/wedding/MusicPlayer";
+import Footer from "@/components/wedding/Footer";
 
 const Index = () => {
+  const [showWelcome, setShowWelcome] = useState(true);
+
+  const handleEnter = () => {
+    setShowWelcome(false);
+  };
+
   return (
-    <div className="flex min-h-screen items-center justify-center bg-background">
-      <div className="text-center">
-        <h1 className="mb-4 text-4xl font-bold">Welcome to Your Blank App</h1>
-        <p className="text-xl text-muted-foreground">Start building your amazing project here!</p>
-      </div>
+    <div className="min-h-screen bg-background">
+      <AnimatePresence>
+        {showWelcome && <WelcomeScreen onEnter={handleEnter} />}
+      </AnimatePresence>
+
+      {!showWelcome && (
+        <>
+          <MusicPlayer />
+          <main>
+            <HeroSection />
+            <CountdownSection />
+            <CeremonySection />
+            <CelebrationSection />
+            <GallerySection />
+            <PartySection />
+          </main>
+          <Footer />
+        </>
+      )}
     </div>
   );
 };
