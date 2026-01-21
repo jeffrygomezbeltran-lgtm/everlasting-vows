@@ -1,95 +1,73 @@
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400&family=Montserrat:wght@300;400;500;600&family=Great+Vibes&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
-All colors MUST be HSL.
-*/
-
 @layer base {
   :root {
-    --background: 0 0% 100%;
-    --foreground: 222.2 84% 4.9%;
+    /* Wedding color palette - Elegant cream, gold and warm tones */
+    --background: 40 33% 98%;
+    --foreground: 30 10% 20%;
 
-    --card: 0 0% 100%;
-    --card-foreground: 222.2 84% 4.9%;
+    --card: 40 30% 97%;
+    --card-foreground: 30 10% 20%;
 
-    --popover: 0 0% 100%;
-    --popover-foreground: 222.2 84% 4.9%;
+    --popover: 40 33% 98%;
+    --popover-foreground: 30 10% 20%;
 
-    --primary: 222.2 47.4% 11.2%;
-    --primary-foreground: 210 40% 98%;
+    /* Rich elegant gold */
+    --primary: 38 65% 50%;
+    --primary-foreground: 40 33% 98%;
 
-    --secondary: 210 40% 96.1%;
-    --secondary-foreground: 222.2 47.4% 11.2%;
+    /* Soft champagne */
+    --secondary: 35 30% 92%;
+    --secondary-foreground: 30 10% 25%;
 
-    --muted: 210 40% 96.1%;
-    --muted-foreground: 215.4 16.3% 46.9%;
+    /* Muted warm gray */
+    --muted: 30 15% 90%;
+    --muted-foreground: 30 10% 45%;
 
-    --accent: 210 40% 96.1%;
-    --accent-foreground: 222.2 47.4% 11.2%;
+    /* Accent - Rose gold */
+    --accent: 15 50% 75%;
+    --accent-foreground: 30 10% 20%;
 
     --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 210 40% 98%;
+    --destructive-foreground: 40 33% 98%;
 
-    --border: 214.3 31.8% 91.4%;
-    --input: 214.3 31.8% 91.4%;
-    --ring: 222.2 84% 4.9%;
+    --border: 35 25% 88%;
+    --input: 35 25% 88%;
+    --ring: 38 65% 50%;
 
     --radius: 0.5rem;
 
+    /* Custom wedding variables */
+    --gold: 38 65% 50%;
+    --gold-light: 40 60% 70%;
+    --gold-dark: 35 70% 35%;
+    --cream: 40 33% 97%;
+    --cream-dark: 35 25% 90%;
+    --champagne: 35 40% 85%;
+    --warm-gray: 30 10% 35%;
+    --rose: 350 40% 80%;
+    
+    /* Gradients */
+    --gradient-gold: linear-gradient(135deg, hsl(40, 60%, 70%) 0%, hsl(38, 65%, 50%) 50%, hsl(35, 70%, 35%) 100%);
+    --gradient-cream: linear-gradient(180deg, hsl(40, 33%, 98%) 0%, hsl(35, 30%, 92%) 100%);
+    --gradient-overlay: linear-gradient(180deg, hsla(30, 10%, 10%, 0.3) 0%, hsla(30, 10%, 10%, 0.7) 100%);
+    
+    /* Shadows */
+    --shadow-soft: 0 4px 20px -2px hsla(38, 65%, 50%, 0.15);
+    --shadow-gold: 0 4px 30px -5px hsla(38, 65%, 50%, 0.3);
+    --shadow-elegant: 0 10px 40px -10px hsla(30, 10%, 20%, 0.2);
+
     --sidebar-background: 0 0% 98%;
-
     --sidebar-foreground: 240 5.3% 26.1%;
-
     --sidebar-primary: 240 5.9% 10%;
-
     --sidebar-primary-foreground: 0 0% 98%;
-
     --sidebar-accent: 240 4.8% 95.9%;
-
     --sidebar-accent-foreground: 240 5.9% 10%;
-
     --sidebar-border: 220 13% 91%;
-
-    --sidebar-ring: 217.2 91.2% 59.8%;
-  }
-
-  .dark {
-    --background: 222.2 84% 4.9%;
-    --foreground: 210 40% 98%;
-
-    --card: 222.2 84% 4.9%;
-    --card-foreground: 210 40% 98%;
-
-    --popover: 222.2 84% 4.9%;
-    --popover-foreground: 210 40% 98%;
-
-    --primary: 210 40% 98%;
-    --primary-foreground: 222.2 47.4% 11.2%;
-
-    --secondary: 217.2 32.6% 17.5%;
-    --secondary-foreground: 210 40% 98%;
-
-    --muted: 217.2 32.6% 17.5%;
-    --muted-foreground: 215 20.2% 65.1%;
-
-    --accent: 217.2 32.6% 17.5%;
-    --accent-foreground: 210 40% 98%;
-
-    --destructive: 0 62.8% 30.6%;
-    --destructive-foreground: 210 40% 98%;
-
-    --border: 217.2 32.6% 17.5%;
-    --input: 217.2 32.6% 17.5%;
-    --ring: 212.7 26.8% 83.9%;
-    --sidebar-background: 240 5.9% 10%;
-    --sidebar-foreground: 240 4.8% 95.9%;
-    --sidebar-primary: 224.3 76.3% 48%;
-    --sidebar-primary-foreground: 0 0% 100%;
-    --sidebar-accent: 240 3.7% 15.9%;
-    --sidebar-accent-foreground: 240 4.8% 95.9%;
-    --sidebar-border: 240 3.7% 15.9%;
     --sidebar-ring: 217.2 91.2% 59.8%;
   }
 }
@@ -99,7 +77,226 @@ All colors MUST be HSL.
     @apply border-border;
   }
 
+  html {
+    scroll-behavior: smooth;
+  }
+
   body {
-    @apply bg-background text-foreground;
+    @apply bg-background text-foreground antialiased;
+    font-family: 'Montserrat', sans-serif;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Cormorant Garamond', serif;
+  }
+}
+
+@layer components {
+  /* Elegant serif heading */
+  .font-serif-elegant {
+    font-family: 'Cormorant Garamond', serif;
+  }
+
+  /* Script font for special text */
+  .font-script {
+    font-family: 'Great Vibes', cursive;
+  }
+
+  /* Sans serif for body */
+  .font-sans-elegant {
+    font-family: 'Montserrat', sans-serif;
+  }
+
+  /* Gold text gradient */
+  .text-gold-gradient {
+    background: linear-gradient(135deg, hsl(40, 60%, 70%) 0%, hsl(38, 65%, 50%) 50%, hsl(35, 70%, 35%) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  /* Elegant gold border */
+  .border-gold {
+    border-color: hsl(38, 65%, 50%);
+  }
+
+  /* Gold ornament line */
+  .ornament-line {
+    @apply relative;
+  }
+
+  .ornament-line::before,
+  .ornament-line::after {
+    content: '';
+    @apply absolute top-1/2 w-16 md:w-24 h-px bg-gradient-to-r;
+    background: linear-gradient(90deg, transparent, hsl(38, 65%, 50%), transparent);
+  }
+
+  .ornament-line::before {
+    @apply right-full mr-4;
+  }
+
+  .ornament-line::after {
+    @apply left-full ml-4;
+  }
+
+  /* Button variants */
+  .btn-wedding {
+    @apply inline-flex items-center justify-center px-8 py-3 text-sm font-medium tracking-wider uppercase transition-all duration-300;
+    @apply bg-primary text-primary-foreground;
+    @apply hover:shadow-lg hover:scale-105;
+    @apply focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2;
+    border: 1px solid hsl(38, 65%, 50%);
+  }
+
+  .btn-wedding-outline {
+    @apply inline-flex items-center justify-center px-8 py-3 text-sm font-medium tracking-wider uppercase transition-all duration-300;
+    @apply bg-transparent text-primary;
+    @apply hover:bg-primary hover:text-primary-foreground;
+    @apply focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2;
+    border: 1px solid hsl(38, 65%, 50%);
+  }
+
+  /* Section styling */
+  .section-wedding {
+    @apply py-16 md:py-24 px-4;
+  }
+
+  /* Decorative frame */
+  .decorative-frame {
+    @apply relative p-8 md:p-12;
+    border: 1px solid hsl(38, 65%, 50%);
+  }
+
+  .decorative-frame::before,
+  .decorative-frame::after {
+    content: '';
+    @apply absolute w-6 h-6;
+    border: 1px solid hsl(38, 65%, 50%);
+  }
+
+  .decorative-frame::before {
+    @apply top-2 left-2;
+    border-right: none;
+    border-bottom: none;
+  }
+
+  .decorative-frame::after {
+    @apply bottom-2 right-2;
+    border-left: none;
+    border-top: none;
+  }
+
+  /* Music player floating button */
+  .music-player-btn {
+    @apply fixed bottom-6 right-6 z-50 w-14 h-14 rounded-full flex items-center justify-center transition-all duration-300;
+    @apply bg-primary text-primary-foreground shadow-lg;
+    @apply hover:scale-110 hover:shadow-xl;
+  }
+
+  /* Gallery grid */
+  .gallery-grid {
+    @apply grid grid-cols-2 md:grid-cols-3 gap-4;
+  }
+
+  .gallery-item {
+    @apply relative overflow-hidden aspect-square rounded-lg cursor-pointer;
+    @apply transition-transform duration-500 hover:scale-105;
+  }
+
+  .gallery-item img {
+    @apply w-full h-full object-cover transition-transform duration-700;
+  }
+
+  .gallery-item:hover img {
+    @apply scale-110;
+  }
+
+  /* Countdown styling */
+  .countdown-item {
+    @apply flex flex-col items-center p-4 md:p-6;
+  }
+
+  .countdown-number {
+    @apply text-4xl md:text-6xl font-light;
+    font-family: 'Cormorant Garamond', serif;
+    color: hsl(38, 65%, 50%);
+  }
+
+  .countdown-label {
+    @apply text-xs md:text-sm uppercase tracking-widest mt-2;
+    color: hsl(30, 10%, 45%);
+    font-family: 'Montserrat', sans-serif;
+  }
+}
+
+@layer utilities {
+  /* Animation utilities */
+  .animate-fade-up {
+    animation: fadeUp 0.8s ease-out forwards;
+    opacity: 0;
+  }
+
+  .animate-fade-in {
+    animation: fadeIn 1s ease-out forwards;
+    opacity: 0;
+  }
+
+  .animate-scale-in {
+    animation: scaleIn 0.6s ease-out forwards;
+    opacity: 0;
+  }
+
+  .animate-delay-100 { animation-delay: 100ms; }
+  .animate-delay-200 { animation-delay: 200ms; }
+  .animate-delay-300 { animation-delay: 300ms; }
+  .animate-delay-400 { animation-delay: 400ms; }
+  .animate-delay-500 { animation-delay: 500ms; }
+  .animate-delay-600 { animation-delay: 600ms; }
+  .animate-delay-700 { animation-delay: 700ms; }
+  .animate-delay-800 { animation-delay: 800ms; }
+
+  @keyframes fadeUp {
+    from {
+      opacity: 0;
+      transform: translateY(30px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+
+  @keyframes scaleIn {
+    from {
+      opacity: 0;
+      transform: scale(0.9);
+    }
+    to {
+      opacity: 1;
+      transform: scale(1);
+    }
+  }
+
+  @keyframes pulse-slow {
+    0%, 100% {
+      opacity: 1;
+    }
+    50% {
+      opacity: 0.7;
+    }
+  }
+
+  .animate-pulse-slow {
+    animation: pulse-slow 3s ease-in-out infinite;
   }
 }
