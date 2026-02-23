@@ -10,7 +10,7 @@ const Footer = () => {
           transition={{ duration: 0.8 }}
           viewport={{ once: true }}
         >
-          <span className="font-Manstein font-script text-4xl md:text-5xl text-gold-light block mb-4">
+          <span className="font-Manstein text-4xl md:text-5xl text-gold-light block mb-4">
             D & J
           </span>
           
