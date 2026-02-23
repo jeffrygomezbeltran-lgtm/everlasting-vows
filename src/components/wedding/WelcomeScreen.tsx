@@ -22,9 +22,9 @@ const WelcomeScreen = ({ onEnter }: WelcomeScreenProps) => {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.2, duration: 0.8 }}
-          className="text-muted-foreground text-sm md:text-base tracking-[0.3em] uppercase mb-8"
+          className="font-Manstein text-muted-foreground text-sm md:text-4xl mb-8 ml-10"
         >
-          Bienvenidos a la invitación de
+          Bienvenidos a la boda de
         </motion.p>
 
         <motion.div
@@ -33,8 +33,8 @@ const WelcomeScreen = ({ onEnter }: WelcomeScreenProps) => {
           transition={{ delay: 0.5, duration: 0.8 }}
           className="mb-6"
         >
-          <span className="font-script text-6xl md:text-8xl text-gold-gradient">
-            D & F
+          <span className="font-Manstein text-6xl md:text-8xl text-gold">
+            D&J
           </span>
         </motion.div>
 
@@ -44,7 +44,7 @@ const WelcomeScreen = ({ onEnter }: WelcomeScreenProps) => {
           transition={{ delay: 0.8, duration: 0.8 }}
           className="font-serif text-2xl md:text-4xl text-foreground mb-4 font-light tracking-wide"
         >
-          Daniel & Fernanda
+          David & July
         </motion.h1>
 
         <motion.div
@@ -62,7 +62,7 @@ const WelcomeScreen = ({ onEnter }: WelcomeScreenProps) => {
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ delay: 1.4, duration: 0.8 }}
-          className="text-muted-foreground text-xs md:text-sm mb-10 italic"
+          className="font-Aptos text-muted-foreground text-xs md:text-sm mb-10 italic"
         >
           La música de fondo es parte de la experiencia
         </motion.p>

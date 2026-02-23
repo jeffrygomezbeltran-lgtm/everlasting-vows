@@ -1,9 +1,11 @@
 import { motion } from "framer-motion";
 import heroImage from "@/assets/hero-couple.jpg";
+import Ornament1 from "@/assets/Ornamentado-Izquierda.svg";
+import Ornament2 from "@/assets/Ornamentado-Derecha.svg";
 
 const HeroSection = () => {
   return (
-    <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
+    <section className="font-Manstein relative min-h-screen flex items-center justify-center overflow-hidden">
       {/* Background Image */}
       <div className="absolute inset-0 z-0">
         <img
@@ -21,9 +23,9 @@ const HeroSection = () => {
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
           viewport={{ once: true }}
-          className="text-cream/90 text-sm md:text-base tracking-[0.4em] uppercase mb-6"
+          className="font-Manstein text-cream/90 text-xl md:text-3xl mb-4 -mr-12"
         >
-          Nos casamos
+            Nuestra Boda
         </motion.p>
 
         <motion.div
@@ -31,34 +33,39 @@ const HeroSection = () => {
           whileInView={{ opacity: 1, scale: 1 }}
           transition={{ duration: 0.8, delay: 0.2 }}
           viewport={{ once: true }}
-          className="mb-6"
+          className=""
         >
-          <span className="font-script text-7xl md:text-9xl text-cream drop-shadow-lg">
-            D & F
+          <span className=" text-7xl md:text-8xl text-cream drop-shadow-lg tracking-[-0.04em]">
+            D&J
           </span>
         </motion.div>
 
-        <motion.h2
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.4 }}
-          viewport={{ once: true }}
-          className="font-serif text-3xl md:text-5xl text-cream font-light tracking-wider mb-4"
-        >
-          Daniel & Fernanda
-        </motion.h2>
-
         <motion.div
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
-          transition={{ duration: 0.8, delay: 0.6 }}
-          viewport={{ once: true }}
-          className="flex items-center justify-center gap-4 mb-8"
-        >
-          <span className="w-16 md:w-24 h-px bg-gold-light" />
-          <span className="text-gold-light text-xl">✦</span>
-          <span className="w-16 md:w-24 h-px bg-gold-light" />
-        </motion.div>
+  initial={{ opacity: 0 }}
+  whileInView={{ opacity: 1 }}
+  transition={{ duration: 0.8, delay: 0.6 }}
+  viewport={{ once: true }}
+  className="flex items-center justify-center mb-20"
+>
+  {/* Ornamento izquierdo */}
+  <img
+    src={Ornament1}
+    className="w-32 md:w-44 -mr-11"
+    alt="ornament1"
+  />
+
+  {/* Texto */}
+  <span className="font-playfair text-cream text-xl md:text-2xl">
+    David & July
+  </span>
+
+  {/* Ornamento derecho */}
+  <img
+    src={Ornament2}
+    className="w-32 md:w-44 -ml-11"
+    alt="ornament2"
+  />
+</motion.div>
 
         <motion.p
           initial={{ opacity: 0, y: 20 }}
@@ -67,7 +74,7 @@ const HeroSection = () => {
           viewport={{ once: true }}
           className="font-serif text-2xl md:text-4xl text-gold-light mb-6"
         >
-          15 de Noviembre, 2025
+          01 de Agosto, 2026
         </motion.p>
 
         <motion.p
@@ -75,9 +82,9 @@ const HeroSection = () => {
           whileInView={{ opacity: 1 }}
           transition={{ duration: 0.8, delay: 1 }}
           viewport={{ once: true }}
-          className="text-cream/80 text-base md:text-lg italic max-w-md mx-auto font-light"
+          className=" font-Aptos text-cream/80 text-base md:text-lg italic max-w-md mx-auto font-light"
         >
-          "El amor no se mide por cuántas veces te tomo de la mano, sino por las veces que no te suelto."
+          "El amor es una decisión que se toma todos los días."
         </motion.p>
       </div>
 

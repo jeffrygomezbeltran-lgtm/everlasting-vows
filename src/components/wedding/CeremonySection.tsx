@@ -15,7 +15,7 @@ const CeremonySection = () => {
   };
 
   const handleDirections = () => {
-    window.open("https://maps.google.com/?q=Parroquia+San+Jose", "_blank");
+    window.open("https://maps.app.goo.gl/CcHYzdoB3tuxfn4b7", "_blank");
   };
 
   return (
@@ -69,7 +69,7 @@ const CeremonySection = () => {
           className="decorative-frame bg-card mb-8"
         >
           <p className="font-serif text-2xl md:text-3xl text-foreground mb-2">
-            Sábado, 15 de Noviembre
+            Sábado, 1 de Agosto
           </p>
           <p className="text-xl md:text-2xl text-primary font-light mb-6">
             4:00 PM
@@ -88,10 +88,10 @@ const CeremonySection = () => {
               Lugar
             </p>
             <p className="font-serif text-xl md:text-2xl text-foreground mb-4">
-              Parroquia San José
+              Santa Marta
             </p>
             <p className="text-muted-foreground mb-6">
-              Av. Principal 123, Ciudad
+              Sector Pozos Colorados
             </p>
             
             <button

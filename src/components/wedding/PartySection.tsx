@@ -2,22 +2,42 @@ import { useState } from "react";
 import { motion } from "framer-motion";
 import { Music, Send, CheckCircle } from "lucide-react";
 import { toast } from "sonner";
+import { supabase } from "@/lib/supabase";
 
 const PartySection = () => {
   const [songName, setSongName] = useState("");
   const [artistName, setArtistName] = useState("");
   const [isSubmitted, setIsSubmitted] = useState(false);
+  const [loading, setLoading] = useState(false);
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+
     if (!songName.trim()) {
       toast.error("Por favor ingresa el nombre de la canción");
       return;
     }
-    
-    // Simulate form submission
+
+    setLoading(true);
+
+    const { error } = await supabase.from("songs").insert([
+      {
+        song_name: songName,
+        artist: artistName || null,
+      },
+    ]);
+
+    setLoading(false);
+
+    if (error) {
+      console.error(error);
+      toast.error("Error guardando la canción");
+      return;
+    }
+
     setIsSubmitted(true);
-    toast.success("¡Gracias por tu sugerencia!");
+    toast.success("¡Canción guardada! 🎵");
+
     setTimeout(() => {
       setSongName("");
       setArtistName("");
@@ -34,7 +54,6 @@ const PartySection = () => {
           transition={{ duration: 0.8 }}
           viewport={{ once: true }}
         >
-          {/* Icon */}
           <div className="mb-8">
             <motion.div
               initial={{ scale: 0 }}
@@ -50,7 +69,7 @@ const PartySection = () => {
           <h2 className="font-serif text-3xl md:text-5xl text-foreground mb-2">
             Fiesta
           </h2>
-          
+
           <div className="flex items-center justify-center gap-4 mb-8">
             <span className="w-12 h-px bg-primary" />
             <span className="text-primary">♪</span>
@@ -66,7 +85,7 @@ const PartySection = () => {
           className="decorative-frame bg-card"
         >
           <p className="text-foreground mb-8 font-light leading-relaxed">
-            Queremos que esta noche sea inolvidable y la música es fundamental. 
+            Queremos que esta noche sea inolvidable y la música es fundamental.
             Ayúdanos a crear la playlist perfecta para celebrar juntos.
           </p>
 
@@ -82,7 +101,9 @@ const PartySection = () => {
                 className="flex flex-col items-center gap-4 py-8"
               >
                 <CheckCircle className="w-16 h-16 text-green-500" />
-                <p className="text-lg text-foreground">¡Gracias por tu sugerencia!</p>
+                <p className="text-lg text-foreground">
+                  ¡Gracias por tu sugerencia!
+                </p>
               </motion.div>
             ) : (
               <form onSubmit={handleSubmit} className="space-y-4">
@@ -91,25 +112,28 @@ const PartySection = () => {
                     type="text"
                     value={songName}
                     onChange={(e) => setSongName(e.target.value)}
-                    placeholder="Nombre de la canción *"
+                    placeholder="Nombre de la canción"
                     className="w-full px-4 py-3 bg-background border border-border rounded-lg focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent transition-all text-center"
                   />
                 </div>
+
                 <div>
                   <input
                     type="text"
                     value={artistName}
                     onChange={(e) => setArtistName(e.target.value)}
-                    placeholder="Artista (opcional)"
+                    placeholder="Artista"
                     className="w-full px-4 py-3 bg-background border border-border rounded-lg focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent transition-all text-center"
                   />
                 </div>
+
                 <button
                   type="submit"
-                  className="btn-wedding w-full md:w-auto inline-flex items-center justify-center gap-2"
+                  disabled={loading}
+                  className="btn-wedding w-full md:w-auto inline-flex items-center justify-center gap-2 disabled:opacity-50"
                 >
                   <Send className="w-4 h-4" />
-                  Sugerir canción
+                  {loading ? "Guardando..." : "Sugerir canción"}
                 </button>
               </form>
             )}

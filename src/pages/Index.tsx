@@ -28,11 +28,11 @@ const Index = () => {
           <MusicPlayer />
           <main>
             <HeroSection />
-            <CountdownSection />
             <CeremonySection />
             <CelebrationSection />
             <GallerySection />
             <PartySection />
+            <CountdownSection />
           </main>
           <Footer />
         </>
