@@ -7,10 +7,9 @@ const MusicPlayer = () => {
   const audioRef = useRef<HTMLAudioElement | null>(null);
 
   useEffect(() => {
-    // Create audio element with a romantic wedding song (royalty-free placeholder)
-    audioRef.current = new Audio(
-      "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3"
-    );
+    // 🔥 Usa un archivo local
+    audioRef.current = new Audio("/music.mp3");
+
     audioRef.current.loop = true;
     audioRef.current.volume = 0.3;
 
@@ -22,17 +21,19 @@ const MusicPlayer = () => {
     };
   }, []);
 
-  const togglePlay = () => {
-    if (audioRef.current) {
-      if (isPlaying) {
-        audioRef.current.pause();
-      } else {
-        audioRef.current.play().catch(() => {
-          // Handle autoplay restrictions
-          console.log("Autoplay was prevented");
-        });
+  const togglePlay = async () => {
+    if (!audioRef.current) return;
+
+    if (isPlaying) {
+      audioRef.current.pause();
+      setIsPlaying(false);
+    } else {
+      try {
+        await audioRef.current.play();
+        setIsPlaying(true);
+      } catch (err) {
+        console.log("Autoplay blocked");
       }
-      setIsPlaying(!isPlaying);
     }
   };
 
