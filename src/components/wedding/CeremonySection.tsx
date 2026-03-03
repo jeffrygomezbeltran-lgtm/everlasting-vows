@@ -15,7 +15,7 @@ const CeremonySection = () => {
   };
 
   const handleDirections = () => {
-    window.open("https://maps.app.goo.gl/CcHYzdoB3tuxfn4b7", "_blank");
+    window.open("https://maps.app.goo.gl/SNYkWd14zD9tkUfz6", "_blank");
   };
 
   return (
@@ -69,7 +69,7 @@ const CeremonySection = () => {
           className="decorative-frame bg-card mb-8"
         >
           <p className="font-serif text-2xl md:text-3xl text-foreground mb-2">
-            Sábado, 1 de Agosto
+            Sábado, 01 de Agosto
           </p>
           <p className="text-xl md:text-2xl text-primary font-light mb-6">
             4:00 PM
@@ -91,7 +91,7 @@ const CeremonySection = () => {
               Santa Marta
             </p>
             <p className="text-muted-foreground mb-6">
-              Sector Pozos Colorados
+              Hotel Santorini
             </p>
             
             <button

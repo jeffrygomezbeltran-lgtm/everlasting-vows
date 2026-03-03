@@ -29,7 +29,6 @@ const Index = () => {
           <main>
             <HeroSection />
             <CeremonySection />
-            <CelebrationSection />
             <GallerySection />
             <PartySection />
             <CountdownSection />
