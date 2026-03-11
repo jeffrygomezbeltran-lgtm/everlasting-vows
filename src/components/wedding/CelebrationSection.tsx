@@ -6,7 +6,7 @@ const CelebrationSection = () => {
     const event = {
       title: "Boda David & July - Celebración",
       start: "20260801T160000",
-end: "20260801T180000",
+      end: "20260801T180000",
       location: "Hacienda Los Rosales, Camino Rural 456",
     };
 
