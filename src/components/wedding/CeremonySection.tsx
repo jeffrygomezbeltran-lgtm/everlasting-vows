@@ -4,12 +4,12 @@ import { MapPin, Calendar } from "lucide-react";
 const CeremonySection = () => {
   const handleSaveDate = () => {
     const event = {
-      title: "Boda Daniel & Fernanda - Ceremonia",
-      start: "20251115T160000",
-      end: "20251115T180000",
-      location: "Parroquia San José, Av. Principal 123",
+      title: "Boda David & July - Ceremonia",
+      start: "20260801T160000",
+      end: "20260801T180000",
+      location: "Santa Marta, Hotel Santorini",
     };
-    
+
     const googleCalendarUrl = `https://calendar.google.com/calendar/render?action=TEMPLATE&text=${encodeURIComponent(event.title)}&dates=${event.start}/${event.end}&location=${encodeURIComponent(event.location)}`;
     window.open(googleCalendarUrl, "_blank");
   };
@@ -53,7 +53,7 @@ const CeremonySection = () => {
           <h2 className="font-serif text-3xl md:text-5xl text-foreground mb-2">
             Ceremonia
           </h2>
-          
+
           <div className="flex items-center justify-center gap-4 mb-8">
             <span className="w-12 h-px bg-primary" />
             <span className="text-primary">✦</span>
@@ -74,7 +74,7 @@ const CeremonySection = () => {
           <p className="text-xl md:text-2xl text-primary font-light mb-6">
             4:00 PM
           </p>
-          
+
           <button
             onClick={handleSaveDate}
             className="btn-wedding-outline mb-6 inline-flex items-center gap-2"
@@ -90,10 +90,8 @@ const CeremonySection = () => {
             <p className="font-serif text-xl md:text-2xl text-foreground mb-4">
               Santa Marta
             </p>
-            <p className="text-muted-foreground mb-6">
-              Hotel Santorini
-            </p>
-            
+            <p className="text-muted-foreground mb-6">Hotel Santorini</p>
+
             <button
               onClick={handleDirections}
               className="btn-wedding inline-flex items-center gap-2"

@@ -4,9 +4,9 @@ import { MapPin, Calendar, PartyPopper } from "lucide-react";
 const CelebrationSection = () => {
   const handleSaveDate = () => {
     const event = {
-      title: "Boda Daniel & Fernanda - Celebración",
-      start: "20251115T190000",
-      end: "20251116T020000",
+      title: "Boda David & July - Celebración",
+      start: "20260801T160000",
+end: "20260801T180000",
       location: "Hacienda Los Rosales, Camino Rural 456",
     };
 
